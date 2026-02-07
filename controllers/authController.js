@@ -49,12 +49,12 @@ exports.postSignup = async (req,res)=>{
 exports.googleCallback = async (req,res)=>{
    try {
     if(!req.user){
-       return res.redirect('http://localhost:5173/login')
+       return res.redirect('https://buyify-frontend.vercel.app/login')
     }
       
     const token = jwt.sign({id:req.user._id,role:req.user.role},process.env.JWT_SECRET,{expiresIn:"20d"})
 
-    return res.redirect(`http://localhost:5173/auth-success?token=${token}`)
+    return res.redirect(`https://buyify-frontend.vercel.app/auth-success?token=${token}`)
    } catch (error) {
     return res.status(500).json({success:false,message:error.message})
    }
