@@ -17,7 +17,7 @@ const passport = require("./config/passport");
 
 
 app.use(cors({
-    origin : "http://localhost:5173",
+    origin : "https://buyify-frontend.vercel.app",
     methods : ["GET","POST","PUT","DELETE","PATCH"],
     allowedHeaders : ['Content-Type', 'Authorization'],
     credentials:true
