@@ -15,7 +15,7 @@ authRoute.get('/auth/google',
   passport.authenticate('google', { scope: ['profile','email'] }));
  
 authRoute.get('/auth/google/callback', 
-  passport.authenticate('google', {session:false, failureRedirect: '/login' }),
+  passport.authenticate('google', {session:false, failureRedirect: `${process.env.CLIENT_URL}/login?error=google` }),
   authController.googleCallback
  );
 
