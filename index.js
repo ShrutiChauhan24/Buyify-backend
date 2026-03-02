@@ -25,16 +25,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 
-app.use(
-  session({
-    secret: "keyboardcat",
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-
 app.use(passport.initialize());
-app.use(passport.session());
 
 app.use('/api',authRoute);
 app.use('/api',categoryRoute);
